@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: Principal.Main
+Sealed: true
+Main-Class: por.ayf.eng.tetris.app.ApplicationMain
 

@@ -1850,7 +1850,7 @@ public class Game extends Canvas implements Runnable {
 		
 		graphics.setColor(Color.WHITE);
 		graphics.setFont(new Font("Verdana", Font.BOLD, (int) (0.45f * SIZE)));
-		graphics.drawString("L�NEAS:  " + lines, DISTANCE_SUBPANEL_X + WIDTH_SUBPANEL/2 - (int) (1.85f * SIZE) , HIGH_SUBPANEL - (int) (11.28f * SIZE));
+		graphics.drawString("LÍNEAS:  " + lines, DISTANCE_SUBPANEL_X + WIDTH_SUBPANEL/2 - (int) (1.85f * SIZE) , HIGH_SUBPANEL - (int) (11.28f * SIZE));
 		
 		
 		if(this.controlScore == true) {

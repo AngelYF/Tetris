@@ -43,21 +43,21 @@ public class ComponentViewCreator extends JDialog {
 		contentPanel.setLayout(null);
 		{
 			lblIcon = new JLabel("");
-			lblIcon.setIcon(new ImageIcon("src/main/resources/images/icon.png"));
+			lblIcon.setIcon(new ImageIcon(getClass().getResource("/images/icon.png")));
 			lblIcon.setBounds(10, 11, 135, 145);
 			contentPanel.add(lblIcon);
 		}
 		{
-			JLabel lblProyectText = new JLabel("Proyecto de 2\u00BA DAM - Tetris");
+			JLabel lblProyectText = new JLabel("Proyecto de 2º DAM - Tetris");
 			lblProyectText.setBounds(155, 25, 215, 14);
 			contentPanel.add(lblProyectText);
 		}
 		
-		lblAngel = new JLabel("Programado por \u00C1ngel Yag\u00FCe Flor");
+		lblAngel = new JLabel("Programado por Ángel Yagüe Flor");
 		lblAngel.setBounds(155, 50, 215, 14);
 		contentPanel.add(lblAngel);
 		
-		lblVersion = new JLabel("Versi\u00F3n 2.1");
+		lblVersion = new JLabel("Versión 2.1");
 		lblVersion.setBounds(155, 75, 215, 14);
 		contentPanel.add(lblVersion);
 		

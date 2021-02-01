@@ -162,7 +162,7 @@ public class ComponentViewControls extends JDialog {
 		lblRotate.setBounds(247, 30, 71, 14);
 		contentPanel.add(lblRotate);
 		
-		lblFreeFall = new JLabel("Ca\u00EDda libre");
+		lblFreeFall = new JLabel("Caída libre");
 		lblFreeFall.setBounds(247, 55, 71, 14);
 		contentPanel.add(lblFreeFall);
 		

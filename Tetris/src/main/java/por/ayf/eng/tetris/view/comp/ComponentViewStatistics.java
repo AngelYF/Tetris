@@ -69,22 +69,22 @@ public class ComponentViewStatistics extends JDialog {
 		contentPanel.add(btnAcept);
 		
 		panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Puntuaciones m\u00E1s altas", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(null, "Puntuaciones más altas", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel.setBounds(10, 11, 424, 160);
 		contentPanel.add(panel);
 		panel.setLayout(null);
 		
-		lblFirst = new JLabel("1\u00BA");
+		lblFirst = new JLabel("1º");
 		lblFirst.setHorizontalAlignment(SwingConstants.CENTER);
 		lblFirst.setBounds(40, 41, 46, 14);
 		panel.add(lblFirst);
 		
-		lblSecond = new JLabel("2\u00BA");
+		lblSecond = new JLabel("2º");
 		lblSecond.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSecond.setBounds(40, 80, 46, 14);
 		panel.add(lblSecond);
 		
-		lblThird = new JLabel("3\u00BA");
+		lblThird = new JLabel("3º");
 		lblThird.setHorizontalAlignment(SwingConstants.CENTER);
 		lblThird.setBounds(40, 119, 46, 14);
 		panel.add(lblThird);

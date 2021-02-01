@@ -56,7 +56,7 @@ public class ViewMainWindow extends JFrame {
 		reservation = 17;
 	
 		this.setTitle("Tetris"); 
-		this.setIconImage(new ImageIcon("src/main/resources/images/icon.png").getImage());
+		this.setIconImage(new ImageIcon(getClass().getResource("/images/icon.png")).getImage());
 		this.setSize(WIDTH, HIGH);
 		this.setLocationRelativeTo(null); // Center the screen.
 		this.setResizable(false);

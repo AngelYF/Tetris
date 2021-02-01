@@ -113,7 +113,7 @@ public class Game extends Canvas implements Runnable {
 		
 		try {
 			this.backgroundMusic = AudioSystem.getClip();
-			this.backgroundMusic.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Tetris.wav")));
+			this.backgroundMusic.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Tetris.wav")));
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -123,7 +123,7 @@ public class Game extends Canvas implements Runnable {
 		
 		try {
 			this.soundGameOver = AudioSystem.getClip();
-			this.soundGameOver.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/GameOver.wav")));
+			this.soundGameOver.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/GameOver.wav")));
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -319,7 +319,7 @@ public class Game extends Canvas implements Runnable {
 					if(this.soundActivated == true) {
 						try {
 							this.soundFall = AudioSystem.getClip();
-							this.soundFall.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Fall.wav")));
+							this.soundFall.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Fall.wav")));
 						} 
 						catch (Exception e) {
 							e.printStackTrace();
@@ -368,7 +368,7 @@ public class Game extends Canvas implements Runnable {
 					if(this.soundActivated == true) {
 						try {
 							this.soundMove = AudioSystem.getClip();
-							this.soundMove.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Move.wav")));
+							this.soundMove.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Move.wav")));
 						} 
 						catch (Exception e) {
 							e.printStackTrace();
@@ -394,7 +394,7 @@ public class Game extends Canvas implements Runnable {
 					if(this.soundActivated == true) {
 						try {
 							this.soundMove = AudioSystem.getClip();
-							this.soundMove.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Move.wav")));
+							this.soundMove.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Move.wav")));
 						} 
 						catch (Exception e) {
 							e.printStackTrace();
@@ -668,7 +668,7 @@ public class Game extends Canvas implements Runnable {
 		if(this.soundActivated == true) {
 			try {
 				this.soundChange = AudioSystem.getClip();
-				this.soundChange.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Change.wav")));
+				this.soundChange.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Change.wav")));
 			} 
 			catch (Exception e) {
 				e.printStackTrace();
@@ -1223,7 +1223,7 @@ public class Game extends Canvas implements Runnable {
 						if(this.soundActivated == true) {
 							try {
 								this.soundLevel = AudioSystem.getClip();
-								this.soundLevel.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Level.wav")));
+								this.soundLevel.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Level.wav")));
 							} 
 							catch (Exception e) {
 								e.printStackTrace();
@@ -1239,7 +1239,7 @@ public class Game extends Canvas implements Runnable {
 			if(this.soundActivated == true) {
 				try {
 					this.soundLine = AudioSystem.getClip();
-					this.soundLine.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Line.wav")));
+					this.soundLine.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Line.wav")));
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
@@ -1251,7 +1251,7 @@ public class Game extends Canvas implements Runnable {
 			if(this.soundActivated == true) {
 				try {
 					this.soundFall = AudioSystem.getClip();
-					this.soundFall.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Fall.wav")));
+					this.soundFall.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Fall.wav")));
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
@@ -1356,7 +1356,7 @@ public class Game extends Canvas implements Runnable {
 			if(this.soundActivated == true) {
 				try {
 					this.soundPause = AudioSystem.getClip();
-					this.soundPause.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Pause.wav")));
+					this.soundPause.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Pause.wav")));
 				} 
 				catch (Exception e) {
 					e.printStackTrace();
@@ -1428,7 +1428,7 @@ public class Game extends Canvas implements Runnable {
 			
 			try {
 				this.backgroundMusic = AudioSystem.getClip();
-				this.backgroundMusic.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Tetris.wav")));
+				this.backgroundMusic.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Tetris.wav")));
 			} 
 			catch (Exception e) {
 				e.printStackTrace();
@@ -1438,7 +1438,7 @@ public class Game extends Canvas implements Runnable {
 			// Reload the Game Over sound.
 			try {
 				this.soundGameOver = AudioSystem.getClip();
-				this.soundGameOver.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/GameOver.wav")));
+				this.soundGameOver.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/GameOver.wav")));
 			} 
 			catch (Exception e) {
 				e.printStackTrace();
@@ -1513,7 +1513,7 @@ public class Game extends Canvas implements Runnable {
 			if(this.playing == true && this.inPause == false) {
 				try {
 					this.backgroundMusic = AudioSystem.getClip();
-					this.backgroundMusic.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/Tetris.wav")));
+					this.backgroundMusic.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Tetris.wav")));
 				} 
 				catch (Exception e) {
 					e.printStackTrace();

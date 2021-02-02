@@ -7,10 +7,10 @@ import java.awt.Graphics;
 import java.io.File;
 import java.io.IOException;
 
-import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
+import por.ayf.eng.tetris.game.audio.Audio;
 import por.ayf.eng.tetris.game.phys.Collision;
 import por.ayf.eng.tetris.view.ViewMainWindow;
 
@@ -111,23 +111,10 @@ public class Game extends Canvas implements Runnable {
 		
 		this.soundActivated = true;
 		
-		try {
-			this.backgroundMusic = AudioSystem.getClip();
-			this.backgroundMusic.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Tetris.wav")));
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+		this.backgroundMusic = Audio.loadSound(this.backgroundMusic, "Tetris.wav");
 		this.backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
 		
-		try {
-			this.soundGameOver = AudioSystem.getClip();
-			this.soundGameOver.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/GameOver.wav")));
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+		this.soundGameOver = Audio.loadSound(this.soundGameOver, "GameOver.wav");
 		
 		// Thread:
 		
@@ -317,13 +304,7 @@ public class Game extends Canvas implements Runnable {
 					}
 					
 					if(this.soundActivated == true) {
-						try {
-							this.soundFall = AudioSystem.getClip();
-							this.soundFall.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Fall.wav")));
-						} 
-						catch (Exception e) {
-							e.printStackTrace();
-						}
+						this.soundFall = Audio.loadSound(this.soundFall, "Fall.wav");
 						this.soundFall.start();
 					}
 					
@@ -366,13 +347,7 @@ public class Game extends Canvas implements Runnable {
 					this.piece.setXPosition(this.piece.getXPosition() - 1);
 					
 					if(this.soundActivated == true) {
-						try {
-							this.soundMove = AudioSystem.getClip();
-							this.soundMove.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Move.wav")));
-						} 
-						catch (Exception e) {
-							e.printStackTrace();
-						}
+						this.soundMove = Audio.loadSound(this.soundMove, "Move.wav");
 						this.soundMove.start();
 					}
 				}
@@ -392,13 +367,7 @@ public class Game extends Canvas implements Runnable {
 					this.piece.setXPosition(this.piece.getXPosition() + 1);
 					
 					if(this.soundActivated == true) {
-						try {
-							this.soundMove = AudioSystem.getClip();
-							this.soundMove.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Move.wav")));
-						} 
-						catch (Exception e) {
-							e.printStackTrace();
-						}
+						this.soundMove = Audio.loadSound(this.soundMove, "Move.wav");
 						this.soundMove.start();
 					}
 				}
@@ -666,13 +635,7 @@ public class Game extends Canvas implements Runnable {
 		}
 		
 		if(this.soundActivated == true) {
-			try {
-				this.soundChange = AudioSystem.getClip();
-				this.soundChange.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Change.wav")));
-			} 
-			catch (Exception e) {
-				e.printStackTrace();
-			}
+			this.soundChange = Audio.loadSound(this.soundChange, "Change.wav");
 			this.soundChange.start();
 		}
 		
@@ -1221,13 +1184,7 @@ public class Game extends Canvas implements Runnable {
 						this.controlLevel = true;
 						
 						if(this.soundActivated == true) {
-							try {
-								this.soundLevel = AudioSystem.getClip();
-								this.soundLevel.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Level.wav")));
-							} 
-							catch (Exception e) {
-								e.printStackTrace();
-							}
+							this.soundLevel = Audio.loadSound(this.soundLevel, "Level.wav");
 							this.soundLevel.start();
 						}
 					}
@@ -1237,25 +1194,13 @@ public class Game extends Canvas implements Runnable {
 		
 		if(maxLines != 0) {
 			if(this.soundActivated == true) {
-				try {
-					this.soundLine = AudioSystem.getClip();
-					this.soundLine.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Line.wav")));
-				} 
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+				this.soundLine = Audio.loadSound(this.soundLine, "Line.wav");
 				this.soundLine.start();
 			}
 		}
 		else {
 			if(this.soundActivated == true) {
-				try {
-					this.soundFall = AudioSystem.getClip();
-					this.soundFall.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Fall.wav")));
-				} 
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+				this.soundFall = Audio.loadSound(this.soundFall, "Fall.wav");
 				this.soundFall.start();
 			}
 		}
@@ -1354,13 +1299,7 @@ public class Game extends Canvas implements Runnable {
 			}
 				
 			if(this.soundActivated == true) {
-				try {
-					this.soundPause = AudioSystem.getClip();
-					this.soundPause.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Pause.wav")));
-				} 
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+				this.soundPause = Audio.loadSound(this.soundPause, "Pause.wav");
 				this.soundPause.start();
 			}	
 			
@@ -1426,23 +1365,11 @@ public class Game extends Canvas implements Runnable {
 		if(this.soundActivated == true) {
 			this.backgroundMusic.close();
 			
-			try {
-				this.backgroundMusic = AudioSystem.getClip();
-				this.backgroundMusic.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Tetris.wav")));
-			} 
-			catch (Exception e) {
-				e.printStackTrace();
-			}
+			this.backgroundMusic = Audio.loadSound(this.backgroundMusic, "Tetris.wav");
 			this.backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
 			
 			// Reload the Game Over sound.
-			try {
-				this.soundGameOver = AudioSystem.getClip();
-				this.soundGameOver.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/GameOver.wav")));
-			} 
-			catch (Exception e) {
-				e.printStackTrace();
-			}
+			this.soundGameOver = Audio.loadSound(this.soundGameOver, "GameOver.wav");
 		}	
 		
 		// Reset:
@@ -1511,13 +1438,7 @@ public class Game extends Canvas implements Runnable {
 		}
 		else {
 			if(this.playing == true && this.inPause == false) {
-				try {
-					this.backgroundMusic = AudioSystem.getClip();
-					this.backgroundMusic.open(AudioSystem.getAudioInputStream(getClass().getResource("/sounds/Tetris.wav")));
-				} 
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+				this.backgroundMusic = Audio.loadSound(this.backgroundMusic, "Tetris.wav");
 				this.backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
 			}
 		}

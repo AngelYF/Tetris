@@ -28,6 +28,7 @@ public class ComponentViewCreator extends JDialog {
 	private JLabel lblIcon;
 	private JLabel lblAngel;
 	private JLabel lblVersion;
+	private JLabel lblProyectText;
 	
 	public ComponentViewCreator(ViewMainWindow window, boolean modal) {
 		super(window, modal);
@@ -41,23 +42,21 @@ public class ComponentViewCreator extends JDialog {
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		{
-			lblIcon = new JLabel("");
-			lblIcon.setIcon(new ImageIcon(getClass().getResource("/images/icon.png")));
-			lblIcon.setBounds(10, 11, 135, 145);
-			contentPanel.add(lblIcon);
-		}
-		{
-			JLabel lblProyectText = new JLabel("Proyecto de 2º DAM - Tetris");
-			lblProyectText.setBounds(155, 25, 215, 14);
-			contentPanel.add(lblProyectText);
-		}
+		
+		lblIcon = new JLabel("");
+		lblIcon.setIcon(new ImageIcon(getClass().getResource("/images/icon.png")));
+		lblIcon.setBounds(10, 11, 135, 145);
+		contentPanel.add(lblIcon);
+
+		lblProyectText = new JLabel("Proyecto de 2º DAM - Tetris");
+		lblProyectText.setBounds(155, 25, 215, 14);
+		contentPanel.add(lblProyectText);
 		
 		lblAngel = new JLabel("Programado por Ángel Yagüe Flor");
 		lblAngel.setBounds(155, 50, 215, 14);
 		contentPanel.add(lblAngel);
 		
-		lblVersion = new JLabel("Versión 2.1");
+		lblVersion = new JLabel("Versión 2.3.1");
 		lblVersion.setBounds(155, 75, 215, 14);
 		contentPanel.add(lblVersion);
 		

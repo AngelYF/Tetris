@@ -65,7 +65,7 @@ public class ControlScore {
 	      
 	        return new Score(name, score, lines);
 	    } else {
-	        System.out.println("Número de registro fuera de límites");
+	    	Util.logMessage(Util.LEVEL_WARN, "Número de registro fuera de límites.", ControlScore.class, null);
 	        return null;
 	    }
 	}
@@ -81,7 +81,7 @@ public class ControlScore {
     	// Check the registers are not out of bounds
 	    if(i >= 0 && i <= numberRegisters) { 
 	        if (score.sizeRegistry() + 8 > sizeRegistry) {
-	        	System.err.println("Tamaño del registro excedido");
+	        	Util.logMessage(Util.LEVEL_WARN, "Tamaño del registro excedido.", ControlScore.class, null);
 	        } else {
 		        fes.seek(i * sizeRegistry); // Set the pointer of L/E
 		        fes.writeUTF(score.getName());
@@ -90,7 +90,7 @@ public class ControlScore {
 		        return true;
 	        }
 	    } else {
-	    	System.out.println("Número de registro fuera de límites");
+	    	Util.logMessage(Util.LEVEL_WARN, "Número de registro fuera de límites.", ControlScore.class, null);
 	    } 
 	    return false;
     }

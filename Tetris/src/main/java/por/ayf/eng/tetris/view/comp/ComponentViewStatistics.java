@@ -14,6 +14,7 @@ import javax.swing.border.TitledBorder;
 
 import por.ayf.eng.tetris.game.ControlScore;
 import por.ayf.eng.tetris.game.Score;
+import por.ayf.eng.tetris.util.Util;
 import por.ayf.eng.tetris.view.ViewMainWindow;
 
 import javax.swing.JLabel;
@@ -162,9 +163,8 @@ public class ComponentViewStatistics extends JDialog {
 						break;
 				}
 			}
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al visualizar las estadísticas.", ComponentViewStatistics.class, ex);
 		}
 	}
 }

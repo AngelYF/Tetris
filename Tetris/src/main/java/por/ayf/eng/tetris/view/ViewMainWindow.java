@@ -68,20 +68,15 @@ public class ViewMainWindow extends JFrame {
 	        public void keyPressed(KeyEvent evt) {     	
 	        	if(evt.getKeyCode() == down) { 
 	        		game.move(1);
-	        	}
-	        	else if(evt.getKeyCode() == left) { 
+	        	} else if(evt.getKeyCode() == left) { 
 	        		game.move(2);
-	        	}
-				else if(evt.getKeyCode() == rotate) {
+	        	} else if(evt.getKeyCode() == rotate) {
 					game.rotate();   		
-				}
-				else if(evt.getKeyCode() == right) { 
+				} else if(evt.getKeyCode() == right) { 
 					game.move(3);
-				}
-				else if(evt.getKeyCode() == fall) {
+				} else if(evt.getKeyCode() == fall) {
 					game.freeFall();
-				}
-				else if(evt.getKeyCode() == reservation) {
+				} else if(evt.getKeyCode() == reservation) {
 					game.reservation();
 				}
 	        }
@@ -130,7 +125,6 @@ public class ViewMainWindow extends JFrame {
 		JMenuItem statistics = new JMenuItem("Estadísticas          ");		
 		statistics.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0));
 		statistics.addActionListener(new ActionListener() {
-			
 			public void actionPerformed(ActionEvent arg0) {
 				statistics();
 			}

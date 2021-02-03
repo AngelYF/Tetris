@@ -3,6 +3,8 @@ package por.ayf.eng.tetris.game.audio;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
+import por.ayf.eng.tetris.util.Util;
+
 /**
  *  Class will define the use of sounds in the game.
  * 
@@ -24,8 +26,8 @@ public class Audio {
 			sound = AudioSystem.getClip();
 			sound.open(AudioSystem.getAudioInputStream(Audio.class.getResource("/sounds/" + name)));
 		} 
-		catch (Exception e) {
-			e.printStackTrace();
+		catch (Exception ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al recuperar el audio.", Audio.class, ex);
 		}
 		
 		return sound;

@@ -282,8 +282,7 @@ public class ComponentViewControls extends JDialog {
 		// Get the keycode and get his text. According to the text, I do something or other
 		if(KeyEvent.getKeyText(evt.getKeyCode()).equals("Desconocido keyCode: 0x0")) {
 			jtf.setText("Desconocido");
-		}
-		else {
+		} else {
 			jtf.setText(KeyEvent.getKeyText(evt.getKeyCode()));
 		}
 	}

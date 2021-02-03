@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import por.ayf.eng.tetris.game.audio.Audio;
 import por.ayf.eng.tetris.game.phys.Collision;
+import por.ayf.eng.tetris.util.Util;
 import por.ayf.eng.tetris.view.ViewMainWindow;
 
 /**
@@ -518,8 +519,7 @@ public class Game extends Canvas implements Runnable {
 			this.firstReservation = true;
 			this.pieceInGame = false;
 			this.repaint();
-		}
-		else {
+		} else {
 			// If the number of changes that have done are 2, go out.
 			if(this.numberOfChanges == 2) { 
 				return;
@@ -865,8 +865,7 @@ public class Game extends Canvas implements Runnable {
 				if(this.piece.getYPosition() < 2) {
 					canRotate = false;
 					return canRotate;
-				}
-				else if(this.piece.getYPosition() == ROW - 1) {
+				} else if(this.piece.getYPosition() == ROW - 1) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setYPosition(ROW - 2);
@@ -878,8 +877,7 @@ public class Game extends Canvas implements Runnable {
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(1);
 					save = true;
-				}
-				else if(this.piece.getXPosition() > COL - 3) {
+				} else if(this.piece.getXPosition() > COL - 3) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(COL - 3);
@@ -891,20 +889,17 @@ public class Game extends Canvas implements Runnable {
 					saveY = this.piece.getYPosition();
 					this.piece.setYPosition(this.piece.getYPosition() - 1);
 					save = true;
-				}
-				else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 1] == 0 && trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 2] == 1 && (this.piece.getState() == 2 || this.piece.getState() == 4)) {
+				} else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 1] == 0 && trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 2] == 1 && (this.piece.getState() == 2 || this.piece.getState() == 4)) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(this.piece.getXPosition() - 1);
 					save = true;
-				}
-				else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 1] == 1 && (this.piece.getState() == 2 || this.piece.getState() == 4)) {
+				} else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 1] == 1 && (this.piece.getState() == 2 || this.piece.getState() == 4)) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(this.piece.getXPosition() - 2);
 					save = true;
-				}
-				else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() - 1] == 1 && (this.piece.getState() == 2 || this.piece.getState() == 4)) {
+				} else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() - 1] == 1 && (this.piece.getState() == 2 || this.piece.getState() == 4)) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(this.piece.getXPosition() + 1);
@@ -921,8 +916,7 @@ public class Game extends Canvas implements Runnable {
 				if(this.piece.getYPosition() < 1) {
 					canRotate = false;
 					return canRotate;
-				}
-				else if(this.piece.getYPosition() == ROW - 1) {
+				} else if(this.piece.getYPosition() == ROW - 1) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setYPosition(ROW - 2);
@@ -934,8 +928,7 @@ public class Game extends Canvas implements Runnable {
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(1);
 					save = true;
-				}
-				else if(this.piece.getXPosition() > COL - 2) {
+				} else if(this.piece.getXPosition() > COL - 2) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(COL - 2);
@@ -947,14 +940,12 @@ public class Game extends Canvas implements Runnable {
 					saveY = this.piece.getYPosition();
 					this.piece.setYPosition(this.piece.getYPosition() - 1);
 					save = true;
-				}
-				else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 1] == 1 && this.piece.getState() == 2) {
+				} else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() + 1] == 1 && this.piece.getState() == 2) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(this.piece.getXPosition() - 1);
 					save = true;
-				}
-				else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() - 1] == 1 && this.piece.getState() == 4) {
+				} else if(trashMatrix[this.piece.getYPosition()][this.piece.getXPosition() - 1] == 1 && this.piece.getState() == 4) {
 					saveX = this.piece.getXPosition();
 					saveY = this.piece.getYPosition();
 					this.piece.setXPosition(this.piece.getXPosition() + 1);
@@ -1197,8 +1188,7 @@ public class Game extends Canvas implements Runnable {
 				this.soundLine = Audio.loadSound(this.soundLine, "Line.wav");
 				this.soundLine.start();
 			}
-		}
-		else {
+		} else {
 			if(this.soundActivated == true) {
 				this.soundFall = Audio.loadSound(this.soundFall, "Fall.wav");
 				this.soundFall.start();
@@ -1248,31 +1238,28 @@ public class Game extends Canvas implements Runnable {
 					// Delay between pieces
 					try {
 						Thread.sleep((1000 - (level * 75)));
-					} 
-					catch (InterruptedException e) {
+					} catch (InterruptedException e) {
 						if(this.dificult.equals("normal")) {
 							//  Delay between pieces
 							try {
 								Thread.sleep((1000 - (level * 75)));
-							} 
-							catch (InterruptedException e1) {
+							} catch (InterruptedException ex) {
+								Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 							}
 						}
 						continue;
 					}
-				}
-				else { // Move the piece
+				} else { // Move the piece
 					try {
 						move(1);	
 						Thread.sleep((1000 - (level * 75)));
-					} 
-					catch (InterruptedException e) { // When the piece falls, it calls the interrupted for direct pass to the next one.
+					} catch (InterruptedException e) { // When the piece falls, it calls the interrupted for direct pass to the next one.
 						if(this.dificult.equals("normal")) {
 							// Delay.
 							try {
 								Thread.sleep((1000 - (level * 75)));
-							} 
-							catch (InterruptedException e1) {
+							} catch (InterruptedException ex) {
+								Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 							}
 						}
 						continue;
@@ -1304,8 +1291,7 @@ public class Game extends Canvas implements Runnable {
 			}	
 			
 			this.repaint();
-		}
-		else {
+		} else {
 			this.inPause = false;
 			
 			if(this.soundActivated == true) {
@@ -1325,8 +1311,7 @@ public class Game extends Canvas implements Runnable {
 	private void updateScore(int lines) {
 		if(score > 999900) {
 			score = 999999;
-		}
-		else {
+		} else {
 			score += (lines * 100) * lines;
 		}	
 	}
@@ -1435,8 +1420,7 @@ public class Game extends Canvas implements Runnable {
 		
 		if(this.soundActivated == false) {
 			this.backgroundMusic.close();
-		}
-		else {
+		} else {
 			if(this.playing == true && this.inPause == false) {
 				this.backgroundMusic = Audio.loadSound(this.backgroundMusic, "Tetris.wav");
 				this.backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
@@ -1465,9 +1449,8 @@ public class Game extends Canvas implements Runnable {
 		
 		try {
 			control = new ControlScore(fileScore);
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en la creación del fichero de scores.", Game.class, ex);
 		}
 		
 		Score aux = null;
@@ -1482,20 +1465,17 @@ public class Game extends Canvas implements Runnable {
 			try {
 				aux = new Score(name, this.score, this.lines);
 				control.addScore(aux);
-			} 
-			catch (IOException e) {
-				e.printStackTrace();
+			} catch (IOException ex) {
+				Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error añadiendo un score.", Game.class, ex);
 			}
-		}
-		else {
+		} else {
 			int indice = -1;
 			
 			for(int i = 0; i < control.getLength(); i++) {
 				try {
 					aux = control.getValueIn(i);
-				} 
-				catch (IOException e) {
-					e.printStackTrace();
+				} catch (IOException ex) {
+					Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error recuperando un score.", Game.class, ex);
 				}
 				
 				if(this.score >= aux.getScore()) { 
@@ -1518,38 +1498,32 @@ public class Game extends Canvas implements Runnable {
 						try {
 							aux = control.getValueIn(indice);
 							control.setValueInt(i, new Score(nombre, this.score, this.lines));
-						} 
-						catch (IOException e) {
-							e.printStackTrace();
+						} catch (IOException ex) {
+							Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error recuperando un score.", Game.class, ex);
 						}
 						
 						if(i == control.getLength() - 1 && control.getLength() < 3) {
 							try {
 								control.addScore(aux);
 								break;
-							} 
-							catch (IOException e) {
-								e.printStackTrace();
+							} catch (IOException ex) {
+								Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error añadiendo un score.", Game.class, ex);
 							}
 						}
-					}
-					else if(i == control.getLength() - 1 && control.getLength() < 3) { 
+					} else if(i == control.getLength() - 1 && control.getLength() < 3) { 
 						try {
 							control.addScore(aux);
 							break;
-						} 
-						catch (IOException e) {
-							e.printStackTrace();
+						} catch (IOException ex) {
+							Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error añadiendo un score.", Game.class, ex);
 						}
-					}
-					else { 
+					} else { 
 						try {
 							aux2 = control.getValueIn(i);
 							control.setValueInt(i, aux);
 							aux = aux2;
-						} 
-						catch (IOException e) {
-							e.printStackTrace();
+						} catch (IOException ex) {
+							Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error recuperando un score.", Game.class, ex);
 						}
 					}
 				}
@@ -1651,8 +1625,7 @@ public class Game extends Canvas implements Runnable {
 			for(int j = 0; j < COL; j++) {
 				if(this.dificult.equals("normal")) {
 					graphics.setColor(Color.DARK_GRAY.darker().darker());
-				}
-				else if(this.dificult.equals("dificil")){
+				} else if(this.dificult.equals("dificil")){
 					graphics.setColor(Color.BLACK);
 				}
 				graphics.drawRect(j * SIZE + BORDER, i * SIZE + BORDER, SIZE, SIZE);
@@ -1789,8 +1762,7 @@ public class Game extends Canvas implements Runnable {
 			graphics.setColor(Color.WHITE);
 			graphics.setFont(new Font("Verdana", Font.BOLD, (int) (0.45f * SIZE)));
 			graphics.drawString("PAUSA", DISTANCE_SUBPANEL_X + WIDTH_SUBPANEL/2 - (int) (0.85f * SIZE) , HIGH_SUBPANEL - (int) (5.71f * SIZE));
-		}
-		else {
+		} else {
 			graphics.setColor(Color.BLACK);
 			graphics.fillRect(DISTANCE_SUBPANEL_X + WIDTH_SUBPANEL/2 - (int) (0.85f * SIZE) , HIGH_SUBPANEL - (int) (6.42f * SIZE), SIZE * 2, SIZE);
 		}
@@ -1799,8 +1771,7 @@ public class Game extends Canvas implements Runnable {
 			graphics.setColor(Color.WHITE);
 			graphics.setFont(new Font("Verdana", Font.BOLD, (int) (0.45f * SIZE)));
 			graphics.drawString("GAME OVER", DISTANCE_SUBPANEL_X + WIDTH_SUBPANEL/2 - (int) (1.28f * SIZE) , HIGH_SUBPANEL - (int) (7.57f * SIZE));
-		}
-		else {
+		} else {
 			graphics.setColor(Color.BLACK);
 			graphics.fillRect(DISTANCE_SUBPANEL_X + WIDTH_SUBPANEL/2 - (int) (1.42f * SIZE) , HIGH_SUBPANEL - (int) (8.42f * SIZE), SIZE * 4, SIZE);
 		}

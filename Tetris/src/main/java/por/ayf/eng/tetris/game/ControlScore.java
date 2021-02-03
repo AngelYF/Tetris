@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
+import por.ayf.eng.tetris.util.Util;
+
 /**
  *  Class will carry the control of the scores through a binary file
  * 
@@ -46,9 +48,8 @@ public class ControlScore {
 	public void close() {
 		try {
 			this.fes.close();
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al cerrar el fichero.", ControlScore.class, ex);
 		}
 	}
 	
@@ -63,8 +64,7 @@ public class ControlScore {
 	        int lines = fes.readInt();
 	      
 	        return new Score(name, score, lines);
-	    }
-	    else {
+	    } else {
 	        System.out.println("Número de registro fuera de límites");
 	        return null;
 	    }
@@ -82,16 +82,14 @@ public class ControlScore {
 	    if(i >= 0 && i <= numberRegisters) { 
 	        if (score.sizeRegistry() + 8 > sizeRegistry) {
 	        	System.err.println("Tamaño del registro excedido");
-	        }	
-	        else {
+	        } else {
 		        fes.seek(i * sizeRegistry); // Set the pointer of L/E
 		        fes.writeUTF(score.getName());
 		        fes.writeInt(score.getScore());
 		        fes.writeInt(score.getLines());
 		        return true;
 	        }
-	    } 
-	    else {
+	    } else {
 	    	System.out.println("Número de registro fuera de límites");
 	    } 
 	    return false;

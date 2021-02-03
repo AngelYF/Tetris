@@ -26,8 +26,7 @@ public class Collision {
 				if(pieceMatrix[i][j] == 1) {
 					if(i == Game.ROW - 1) {
 						return true;
-					}
-					else if(trashMatrix[i + 1][j] == 1) {
+					} else if(trashMatrix[i + 1][j] == 1) {
 						return true;
 					}
 				}
@@ -50,8 +49,7 @@ public class Collision {
 				if(pieceMatrix[i][j] == 1) {
 					if(j == Game.COL - 1) {
 						return true;
-					}
-					else if(trashMatrix[i][j + 1] == 1) {
+					} else if(trashMatrix[i][j + 1] == 1) {
 						return true;
 					}
 				}
@@ -74,8 +72,7 @@ public class Collision {
 				if(pieceMatrix[i][j] == 1) {
 					if(j == 0) {
 						return true;
-					}
-					else if(trashMatrix[i][j - 1] == 1) {
+					} else if(trashMatrix[i][j - 1] == 1) {
 						return true;
 					}
 				}

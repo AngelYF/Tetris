@@ -1,11 +1,9 @@
 package por.ayf.eng.tetris.app;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
+import por.ayf.eng.tetris.app.ApplicationMain;
+import por.ayf.eng.tetris.util.Util;
 import por.ayf.eng.tetris.view.ViewMainWindow;
 
 /**
@@ -21,23 +19,14 @@ public class ApplicationMain {
 	public static void main(String[] args) {	
 		try { // This try-catch will change the regular aparence of JFrame of Java.
 			
-           // UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); 				Other type of view.
-           // UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"); 	Other.
+			// UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"); 				Other type of view.
+			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"); 		Other.
 			
-           UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); 				// By defect.
-           new ViewMainWindow(); 
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); 					// By defect.
+           	new ViewMainWindow(); 	
         } 
-		catch (ClassNotFoundException ex) {
-          Logger.getLogger(ViewMainWindow.class.getName()).log(Level.SEVERE, null, ex);
+		catch (Exception ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al iniciar la aplicación.", ApplicationMain.class, ex);
         } 
-		catch (InstantiationException ex) {
-          Logger.getLogger(ViewMainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-		catch (IllegalAccessException ex) {
-          Logger.getLogger(ViewMainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-		catch (UnsupportedLookAndFeelException ex) {
-          Logger.getLogger(ViewMainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
 	}
 }
